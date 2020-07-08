@@ -1,0 +1,179 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, graphics, setspace}
+\usepackage[width=15cm,top=2cm]{geometry}
+
+\newcommand{\mathsym}[1]{{}}
+\newcommand{\unicode}[1]{{}}
+
+\newtheorem{theorem}{\textbf{Zadatak}}
+\newenvironment{solution}{\noindent\textbf{Rje\v senje:\newline}}{$\blacksquare$}
+
+\begin{document}
+
+\begin{theorem}
+    Ako je
+        \(A=\left(
+        \begin{array}{ccc}
+            2 & 3 & 2 \\
+            1 & 2 & -3 \\
+            3 & 4 & 1 \\
+        \end{array}
+        \right)\)
+    i
+    \(B=\left(
+    \begin{array}{c}
+        0 \\
+        -16 \\
+        12 \\
+    \end{array}
+    \right)\),
+    odrediti $A^{-2}B$.
+\end{theorem}
+
+\begin{solution}
+    Odredimo prvo inverznu matricu matrice $A$, tjst $A^{-1}$.
+    Da bi postojala inverzna matrica matrice $A$, determinanta matrice $A$ mora biti razli\v cita od nule ($detA\neq 0$).
+    Pa provjerimo prvo determinantu matrice $A$,
+    \newline
+    \begin{equation*}
+        \begin{aligned}
+            detA=\left|
+        \begin{array}{ccc}
+            2 & 3 & 2 \\
+            1 & 2 & -3 \\
+            3 & 4 & 1 \\
+        \end{array}
+        \right|
+        &=2\cdot \left|
+        \begin{array}{cc}
+            2 & -3 \\
+            4 & 1 \\
+        \end{array}
+        \right| -
+        1\cdot \left|
+        \begin{array}{cc}
+            3 & 2 \\
+            4 & 1 \\
+        \end{array}
+        \right| +
+        3\cdot \left|
+        \begin{array}{cc}
+            3 & 2 \\
+            2 & -3 \\
+        \end{array}
+        \right|\\
+        &=2\cdot 14 -1\cdot (-5)+3\cdot (-13)\\
+        &=28+5-39\\
+        &=-6=detA\neq 0\Rightarrow\exists A^{-1}.
+        \end{aligned}
+    \end{equation*}
+    Formula za inverznu matricu matrice A je
+    $$A^{-1}=\frac{1}{detA}\cdot adjA,$$
+    gdje je $adjA=cofA^T$. Odredimo $cofA$.
+    \begin{equation*}
+        cofA=\left(
+        \begin{array}{ccc}
+            A_{11} & A_{12} & A_{13} \\
+            A_{21} & A_{22} & A_{23} \\
+            A_{31} & A_{32} & A_{33} \\
+        \end{array}
+        \right)
+        \end{equation*}.\\
+        $A_{ij}$ predstavlja determinantu kada prekrizimo $i-tu$ vrstu i $j-tu$ kolonu matrice $A$, isto tako za svaki \v clan $cofA$ tokom ra\v cunanja
+        uzimamo sljede\v ci raspored predznaka,
+        \begin{equation*}
+            cofA=\left(
+            \begin{array}{ccc}
+                + & - & + \\
+                - & + & - \\
+                + & - & + \\
+            \end{array}
+            \right)
+            \end{equation*}.\\
+    \begin{align*}
+        A_{11}&=\left|
+        \begin{array}{cc}
+            2 & -3 \\
+            4 & 1 \\
+        \end{array}
+        \right|=2+12=14 &
+        A_{12}&=\left|
+        \begin{array}{cc}
+            1 & -3 \\
+            3 & 1 \\
+        \end{array}
+        \right|=1+9=10 &
+        A_{13}&=\left|
+        \begin{array}{cc}
+            1 & 2 \\
+            3 & 4 \\
+        \end{array}
+        \right|=-2\\
+        A_{21}&=3-8=5 & A_{22}&=2-6=-4 & A_{23}&=8-9=-1\\
+        A_{31}&=-9-4=-13 & A_{32}&=-6-2=8 & A_{33}&=4-3=1
+    \end{align*}
+    Sada formirajmo matricu $cofA$,
+    \begin{equation*}
+        cofA=\left(
+        \begin{array}{ccc}
+            14 & 5 & -13 \\
+            -10 & -4 & 8 \\
+            -2 & 1 & 1 \\
+        \end{array}
+        \right)
+        \end{equation*}.\\
+        Dakle, $adjA$ je zapravi transponovana $cofA$, tjst
+        \begin{equation*}
+            adjA=\left(
+            \begin{array}{ccc}
+                14 & -10 & -2 \\
+                5 & -4 & 1 \\
+                -13 & 8 & 1 \\
+            \end{array}
+            \right)^T=\left(
+            \begin{array}{ccc}
+                14 & 5 & -13 \\
+                -10 & -4 & 8 \\
+                -2 & 1 & 1 \\
+            \end{array}
+            \right)
+            \end{equation*}.\\
+        Dalje,
+        \begin{equation*}
+            A^{-1}=\frac{1}{-6}\cdot\left(
+                \begin{array}{ccc}
+                    14 & 5 & -13 \\
+                    -10 & -4 & 8 \\
+                    -2 & 1 & 1 \\
+                \end{array}
+                \right)=\left(
+                    \begin{array}{ccc}
+                     -\frac{7}{3} & -\frac{5}{6} & \frac{13}{6} \\
+                     \frac{5}{3} & \frac{2}{3} & -\frac{4}{3} \\
+                     \frac{1}{3} & -\frac{1}{6} & -\frac{1}{6} \\
+                    \end{array}
+                    \right)
+            \end{equation*}.\\
+\end{solution}
+
+\begin{doublespace}
+\noindent\(\left(
+\begin{array}{ccc}
+ \frac{43}{9} & \frac{37}{36} & -\frac{155}{36} \\
+ -\frac{29}{9} & -\frac{13}{18} & \frac{53}{18} \\
+ -\frac{10}{9} & -\frac{13}{36} & \frac{35}{36} \\
+\end{array}
+\right)\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\left(
+\begin{array}{c}
+ -\frac{613}{9} \\
+ \frac{422}{9} \\
+ \frac{157}{9} \\
+\end{array}
+\right)\)
+\end{doublespace}
+
+\end{document}

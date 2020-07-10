@@ -6,7 +6,7 @@
 \newcommand{\unicode}[1]{{}}
 
 \newtheorem{theorem}{\textbf{Zadatak}}
-\newenvironment{solution}{\noindent\textbf{Rje\v senje:\newline}}{$\blacksquare$}
+\newenvironment{solution}{\noindent\textbf{Rje\v senje:\newline}}{$\hfill\blacksquare$}
 
 \begin{document}
 
@@ -38,33 +38,33 @@
     \begin{equation*}
         \begin{aligned}
             detA=\left|
-        \begin{array}{ccc}
-            2 & 3 & 2 \\
-            1 & 2 & -3 \\
-            3 & 4 & 1 \\
-        \end{array}
-        \right|
-        &=2\cdot \left|
-        \begin{array}{cc}
-            2 & -3 \\
-            4 & 1 \\
-        \end{array}
-        \right| -
-        1\cdot \left|
-        \begin{array}{cc}
-            3 & 2 \\
-            4 & 1 \\
-        \end{array}
-        \right| +
-        3\cdot \left|
-        \begin{array}{cc}
-            3 & 2 \\
-            2 & -3 \\
-        \end{array}
-        \right|\\
-        &=2\cdot 14 -1\cdot (-5)+3\cdot (-13)\\
-        &=28+5-39\\
-        &=-6=detA\neq 0\Rightarrow\exists A^{-1}.
+            \begin{array}{ccc}
+                2 & 3 & 2 \\
+                1 & 2 & -3 \\
+                3 & 4 & 1 \\
+            \end{array}
+            \right|
+            &=2\cdot \left|
+            \begin{array}{cc}
+                2 & -3 \\
+                4 & 1 \\
+            \end{array}
+            \right| -
+            1\cdot \left|
+            \begin{array}{cc}
+                3 & 2 \\
+                4 & 1 \\
+            \end{array}
+            \right| +
+            3\cdot \left|
+            \begin{array}{cc}
+                3 & 2 \\
+                2 & -3 \\
+            \end{array}
+            \right|\\
+            &=2\cdot 14 -1\cdot (-5)+3\cdot (-13)\\
+            &=28+5-39\\
+            &=-6=detA\neq 0\Rightarrow\exists A^{-1}.
         \end{aligned}
     \end{equation*}
     Formula za inverznu matricu matrice A je
@@ -78,18 +78,18 @@
             A_{31} & A_{32} & A_{33} \\
         \end{array}
         \right)
-        \end{equation*}.\\
-        $A_{ij}$ predstavlja determinantu kada prekrizimo $i-tu$ vrstu i $j-tu$ kolonu matrice $A$, isto tako za svaki \v clan $cofA$ tokom ra\v cunanja
-        uzimamo sljede\v ci raspored predznaka,
-        \begin{equation*}
-            cofA=\left(
-            \begin{array}{ccc}
-                + & - & + \\
-                - & + & - \\
-                + & - & + \\
-            \end{array}
-            \right)
-            \end{equation*}.\\
+    \end{equation*}.\\
+    $A_{ij}$ predstavlja determinantu kada prekrizimo $i-tu$ vrstu i $j-tu$ kolonu matrice $A$, isto tako za svaki \v clan $cofA$ tokom ra\v cunanja
+    uzimamo sljede\v ci raspored predznaka,
+    \begin{equation*}
+        cofA=\left(
+        \begin{array}{ccc}
+            + & - & + \\
+            - & + & - \\
+            + & - & + \\
+        \end{array}
+        \right)
+    \end{equation*}.\\
     \begin{align*}
         A_{11}&=\left|
         \begin{array}{cc}
@@ -121,39 +121,101 @@
             -2 & 1 & 1 \\
         \end{array}
         \right)
-        \end{equation*}.\\
-        Dakle, $adjA$ je zapravi transponovana $cofA$, tjst
+    \end{equation*}.\\
+    Dakle, $adjA$ je zapravi transponovana $cofA$, tjst
+    \begin{equation*}
+        adjA=\left(
+        \begin{array}{ccc}
+            14 & -10 & -2 \\
+            5 & -4 & 1 \\
+            -13 & 8 & 1 \\
+        \end{array}
+        \right)^T=\left(
+        \begin{array}{ccc}
+            14 & 5 & -13 \\
+            -10 & -4 & 8 \\
+            -2 & 1 & 1 \\
+        \end{array}
+        \right)
+    \end{equation*}.\\
+    Dalje,
+    \begin{equation*}
+        A^{-1}=\frac{1}{-6}\cdot\left(
+        \begin{array}{ccc}
+            14 & 5 & -13 \\
+            -10 & -4 & 8 \\
+            -2 & 1 & 1 \\
+        \end{array}
+        \right)=\left(
+        \begin{array}{ccc}
+            -\frac{7}{3} & -\frac{5}{6} & \frac{13}{6} \\
+            \frac{5}{3} & \frac{2}{3} & -\frac{4}{3} \\
+            \frac{1}{3} & -\frac{1}{6} & -\frac{1}{6} \\
+        \end{array}
+        \right)
+    \end{equation*}.\\
+    Odredimo sada $A^{-2}=(A^{-1})^2$, tjst
+    \begin{doublespace}
         \begin{equation*}
-            adjA=\left(
-            \begin{array}{ccc}
-                14 & -10 & -2 \\
-                5 & -4 & 1 \\
-                -13 & 8 & 1 \\
-            \end{array}
-            \right)^T=\left(
-            \begin{array}{ccc}
-                14 & 5 & -13 \\
-                -10 & -4 & 8 \\
-                -2 & 1 & 1 \\
-            \end{array}
-            \right)
-            \end{equation*}.\\
-        Dalje,
-        \begin{equation*}
-            A^{-1}=\frac{1}{-6}\cdot\left(
+            \begin{aligned}
+                (A^{-1})^2&=A^{-1}\cdot A^{-1}\\
+                &=\left(
                 \begin{array}{ccc}
-                    14 & 5 & -13 \\
-                    -10 & -4 & 8 \\
-                    -2 & 1 & 1 \\
+                    -\frac{7}{3} & -\frac{5}{6} & \frac{13}{6} \\
+                    \frac{5}{3} & \frac{2}{3} & -\frac{4}{3} \\
+                    \frac{1}{3} & -\frac{1}{6} & -\frac{1}{6} \\
                 \end{array}
-                \right)=\left(
+                \right)\cdot \left(
+                \begin{array}{ccc}
+                    -\frac{7}{3} & -\frac{5}{6} & \frac{13}{6} \\
+                    \frac{5}{3} & \frac{2}{3} & -\frac{4}{3} \\
+                    \frac{1}{3} & -\frac{1}{6} & -\frac{1}{6} \\
+                \end{array}
+                \right)\\
+                &=\left(
                     \begin{array}{ccc}
-                     -\frac{7}{3} & -\frac{5}{6} & \frac{13}{6} \\
-                     \frac{5}{3} & \frac{2}{3} & -\frac{4}{3} \\
-                     \frac{1}{3} & -\frac{1}{6} & -\frac{1}{6} \\
+                        -\frac{7}{3}\cdot (-\frac{7}{3})+(-\frac{5}{6})\cdot \frac{5}{3}+\frac{13}{6}\cdot \frac{1}{3} & \frac{37}{36} & -\frac{155}{36} \\
+                        \frac{5}{3}\cdot (-\frac{7}{3})+\frac{2}{3}\cdot \frac{5}{3}+(-\frac{4}{3})\cdot \frac{1}{3} & -\frac{13}{18} & \frac{53}{18} \\
+                        \frac{1}{3}\cdot (-\frac{7}{3})+(-\frac{1}{6})\cdot \frac{5}{3}+(-\frac{1}{6})\cdot \frac{1}{3} & -\frac{13}{36} & \frac{35}{36} \\
+                    \end{array}
+                \right)\\
+                &=\left(
+                    \begin{array}{ccc}
+                        \frac{49}{9}-\frac{25}{18}+\frac{13}{18} & \frac{37}{36} & -\frac{155}{36} \\
+                        -\frac{35}{9}+\frac{10}{9}-\frac{4}{9} & -\frac{13}{18} & \frac{53}{18} \\
+                        -\frac{7}{9}-\frac{5}{18}-\frac{1}{18} & -\frac{13}{36} & \frac{35}{36} \\
+                    \end{array}
+                \right)\\
+                A^{-2}&=\left(
+                \begin{array}{ccc}
+                    \frac{43}{9} & \frac{37}{36} & -\frac{155}{36} \\
+                    -\frac{29}{9} & -\frac{13}{18} & \frac{53}{18} \\
+                    -\frac{10}{9} & -\frac{13}{36} & \frac{35}{36} \\
+                \end{array}
+                \right)
+            \end{aligned}
+        \end{equation*}
+    \end{doublespace}
+    Na kraju, pomno\v zimo $A^{-2}$ sa $B$.
+    \begin{doublespace}
+        \begin{equation*}
+            \begin{aligned}
+                A^{-2}\cdot B &= \left(
+                    \begin{array}{ccc}
+                        \frac{43}{9} & \frac{37}{36} & -\frac{155}{36} \\
+                        -\frac{29}{9} & -\frac{13}{18} & \frac{53}{18} \\
+                        -\frac{10}{9} & -\frac{13}{36} & \frac{35}{36} \\
+                    \end{array}
+                    \right)\cdot \left(
+                    \begin{array}{c}
+                        0 \\
+                        -16 \\
+                        12 \\
                     \end{array}
                     \right)
-            \end{equation*}.\\
+            \end{aligned}
+        \end{equation*}
+    \end{doublespace}
 \end{solution}
 
 \begin{doublespace}
@@ -165,6 +227,13 @@
 \end{array}
 \right)\)
 \end{doublespace}
+\noindent\(\left(
+\begin{array}{ccc}
+ \frac{43}{9} & \frac{37}{36} & -\frac{155}{36} \\
+ -\frac{29}{9} & -\frac{13}{18} & \frac{53}{18} \\
+ -\frac{10}{9} & -\frac{13}{36} & \frac{35}{36} \\
+\end{array}
+\right)\)
 
 \begin{doublespace}
 \noindent\(\left(

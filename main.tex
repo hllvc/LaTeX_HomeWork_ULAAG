@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage{amsmath, amssymb, graphics, setspace, cancel, mathtools}
 \usepackage[T1]{fontenc}
-\usepackage[width=15cm,top=2cm]{geometry}
+\usepackage[width=15cm,top=1.7cm]{geometry}
 
 \newcommand{\com}[1]{\tag{\textrm{\footnotesize #1}}}
 \newtheorem{theorem}{\textbf{Zadatak}}
@@ -93,7 +93,7 @@
             \right|\\
             &=2\cdot 14 -1\cdot (-5)+3\cdot (-13)\\
             &=28+5-39\\
-            &=-6=detA\neq 0\Rightarrow\exists A^{-1}.
+            &=-6\neq 0\Rightarrow\exists A^{-1}.
         \end{aligned}
     \end{equation*}
     Formula za inverznu matricu matrice A je
@@ -109,9 +109,9 @@
         \right)
     \end{equation*}.\\
     $A_{ij}$ predstavlja determinantu kada prekrizimo $i-tu$ vrstu i $j-tu$ kolonu matrice $A$, isto tako za svaki \v clan $cofA$ tokom ra\v cunanja
-    uzimamo sljede\v ci raspored predznaka,
+    uzimamo sljede\' ci raspored predznaka,
     \begin{equation*}
-        cofA=\left(
+        \left(
         \begin{array}{ccc}
             + & - & + \\
             - & + & - \\
@@ -145,9 +145,9 @@
     \begin{equation*}
         cofA=\left(
         \begin{array}{ccc}
-            14 & 5 & -13 \\
-            -10 & -4 & 8 \\
-            -2 & 1 & 1 \\
+            14 & -10 & -2 \\
+            5 & -4 & 1 \\
+            -13 & 8 & 1 \\
         \end{array}
         \right)
     \end{equation*}.\\
@@ -500,7 +500,7 @@
 \end{theorem}
 
 \begin{solution}
-    Prvo zamijenimo mjesta tre\' coj i \v cetvrtoj koloni a zati prvoj i tre\' coj koloni.
+    Prvo zamijenimo mjesta tre\' coj i \v cetvrtoj koloni a zatim prvoj i tre\' coj koloni.
     \begin{equation}
         \label{eq:4}
         \begin{aligned}
@@ -627,17 +627,18 @@
         \end{aligned}
     \end{equation*}
     Posmatrajmo dobivenu matricu $A|b$. Rang same matrice $A$ bi\' ce 3 ako i samo ako $\lambda$ bude jednaka nula.
-    U tom slu\v caju rang matrice $A|b$ biti \' ce jednak \v cetiri. Prema tome $r(A)<r(A|b)$. Prema Kronecker-Capellijevom toremu ovaj sistem nije saglasan,
+    U tom slu\v caju rang matrice $A|b$ biti \' ce jednak \v cetiri. Prema tome $r(A)<r(A|b)$. Prema Kronecker-Capellijevom teoremu ovaj sistem nije saglasan,
     odakle slijedi da za $\lambda =0$ sistem (\ref{eq:5}) nema rje\v senje. Za bilo koje $\lambda\neq 0$ sistem (\ref{eq:5}) ima jedinstveno rje\v senje jer
-    \' ce $r(A)=r(A|b)=max(m,n)$ gdje su $m$ i $n$ redom broj vrsta i broj kolona matrice $A|b$, odnosno redom broj jedna\v cina i broj nepoznatih.\\
+    \' ce $r(A)=r(A|b)=max(m,n)$ gdje su $m$ i $n$ redom broj vrsta i broj kolona matrice $A|b$, odnosno redom broj jedna\v cina i broj nepoznatih.
+    U na\v sem slu\v caju $m=n$ pa je sistem kvadratni.\\
     Pronađimo sada uređenu n-torku, ra\v cunamo 'odozdo na gore'.
     \begin{equation*}
         \begin{aligned}
-            \lambda t&=2\lambda +1|\cdot\frac{1}{\lambda} \\
+            \lambda t&=2\lambda +1\bigg/\cdot\frac{1}{\lambda} \\
                     \Aboxed{t&=\frac{2\lambda +1}{\lambda}} \\
-                    -z&=3+t|\cdot (-1)\\
+                    -z&=3+t\bigg/\cdot (-1)\\
                     \Aboxed{z&=-(3+t)} \\
-                    2y&=z-(\lambda +1)t|\cdot\frac{1}{2} \\
+                    2y&=z-(\lambda +1)t\bigg/\cdot\frac{1}{2} \\
                     \Aboxed{y&=\frac{z-(\lambda +1)t}{2}} \\
                     \Aboxed{x&=-1-y-2z-t} \\
         \end{aligned}
